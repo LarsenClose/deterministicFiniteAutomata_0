@@ -47,13 +47,17 @@
 |---|---|---|
 |*q0| q1| q0|   
 |*q1| q2| q1|   
-|q2| q2| q2|   
+|q2| q2| q2|
+
+    equivalent to a1dfa2, a1dfa4
+
 
 ![1dfa1 image](./images/a1dfa1.png)
 
 
 
--------
+---
+
 ### 2.    a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }
     (Q,Σ,delta,start,final)
 
@@ -76,7 +80,8 @@
 
 ![a1dfa2 image](./images/a1dfa2.png)
 
--------
+---
+
 ### 3.    a1dfa3.jff = { w | neither 00 nor 010 is a substring of w }
     (Q,Σ,delta,start,final)
 
@@ -84,7 +89,7 @@
     Σ = {0, 1}
     Delta
     start = { q0 }
-    accept = { q0, q2, q3}
+    accept = { q0, q1}
 
 ###### Delta
 |Present State   | Next state for input 0   | Next state for input 1 |
@@ -96,7 +101,8 @@
 
 ![a1dfa3 image](./images/a1dfa3.png)
 
--------
+---
+
 ### 4.    a1dfa4.jff = { w | neither 00 nor 0100 is a substring of w }
     (Q,Σ,delta,start,final)
 
@@ -104,7 +110,7 @@
     Σ = {0, 1}
     Delta
     start = { q0 }
-    accept = { q0, q2, q3}
+    accept = { q0, q1, q3}
 
 
 ###### Delta
@@ -116,23 +122,29 @@
 |q3| q1| q0|
 
 ![a1dfa4 image](./images/a1dfa4.png)
--------
+
+---
+
 ### 5.    a1dfa5.jff = { w | neither 000 nor 001 is a substring of w }
     (Q,Σ,delta,start,final)
 
-
-    q1 no longer an accept state
-    Q = { q0, q1, q2 }
+    Q = { q0, q1, q2, q3 }
     Σ = {0, 1}
+    Delta
     start = { q0 }
-    accept = { q0 }
+    accept = { q0, q1, q2}
 
 ###### Delta
 |Present State   | Next state for input 0   | Next state for input 1 |
 |---|---|---|
 |*q0| q1| q0|   
-|q1| q2| q1|   
-|q2| q2| q2|
+|q1| q2| q0|   
+|q2| q2| q2|   
+|q3| q3| q3|
+
+![a1dfa5 image](./images/a1dfa5.png)
+
+---
 
  ## A5. Define a right-linear grammar that generates:
 
