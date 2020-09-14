@@ -57,7 +57,7 @@
 #### 2.    a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }
     (Q,Σ,delta,start,final)
 
-    Q = { q0, q1, q2 }
+    Q = { q0, q1, q2, q3 }
     Σ = {0, 1}
     Delta
     start = { q0 }
@@ -69,7 +69,8 @@
 | ------------- | ---------------------- | ---------------------- |
 | →q0           | q1                     | q0                     |
 | q1            | q2                     | q1                     |
-| q2            | q2                     | q2                     |
+| q2            | q3                     | q2                     |
+| q3            | q3                     | q3                     |
 
 
 
@@ -85,7 +86,7 @@
     Σ = {0, 1}
     Delta
     start = { q0 }
-    accept = { q0, q1}
+    accept = { q0, q1, q3 }
 
 ###### Delta
 | Present State | Next state for input 0 | Next state for input 1 |
@@ -106,7 +107,7 @@
     Σ = {0, 1}
     Delta
     start = { q0 }
-    accept = { q0, q1, q3, q4}
+    accept = { q0, q1, q3 }
 
 
 ###### Delta
@@ -124,8 +125,8 @@
 #### 5. a1dfa5.jff = { w | neither 000 nor 001 is a substring of w }
     (Q,Σ,delta,start,final)
 
-    Q = { q0, q1, q2, q3 }
-    Σ = {0, 1}a1dfa1, a1dfa2, a1dfa4
+    Q = { q0, q1, q2, q3, q4 }
+    Σ = {0, 1}
     Delta
     start = { q0 }
     accept = { q0, q1, q2}
@@ -136,15 +137,16 @@
 | ------------- | ---------------------- | ---------------------- |
 | →q0           | q1                     | q0                     |
 | q1            | q2                     | q0                     |
-| q2            | q2                     | q2                     |
+| q2            | q3                     | q4                     |
 | q3            | q3                     | q3                     |
+| q4            | q4                     | q4                     |
 
 ![a1dfa5 image](./images/a1dfa5.png)
 
 ---
 > #### Use Online Text to indicate the groupings as equivalence sets
 
-  {a1dfa1.jff, a1dfa2.jff, a1dfa4.jff} {a1dfa4} {a1dfa5}
+  {a1dfa1.jff, a1dfa2.jff, a1dfa4.jff} {a1dfa3.jjf} {a1dfa5.jff}
 
 > #### Reflect on the experience of constructing these DFAs. Use Online Text to report observations related to your learning.
 
@@ -167,8 +169,10 @@ The assignment started off pretty smoothly then in talking with classmates there
 | State | 0   | 1   |
 | ----- | --- | --- |
 | →q0   | q1  | q2  |
-| q1    | q0  | T   |
-| q2    | q1  | T   |
+| q1    | q0  | q3  |
+| q2    | q1  | q3  |
+| q2    | q1  | q3  |
+| q3    | q3  | q3  |
 
 
 ![a2dfa image](./images/a2dfa.png)
@@ -178,7 +182,7 @@ I am still working on getting the handle of using the tables and  transitions fu
 
 ---
  ## A3
-#### Finite automata are useful components of computers and algorithms, t---hus it is important to be able to minimize the number of states of a given DFA. Convert the following DFA to a minimum-state equivalent DFA.
+#### Finite automata are useful components of computers and algorithms, thus it is important to be able to minimize the number of states of a given DFA. Convert the following DFA to a minimum-state equivalent DFA.
 
 ##### Original
 
