@@ -92,11 +92,10 @@ accept = { q0, q1 }
 </tr>
 </tbody>
 </table>
-<h2 id="1dfa1-image"><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a1dfa1.png" alt="1dfa1 image"></h2>
-<h4 id="2-a1dfa2jff---w--neither-00-nor-000-is-a-substring-of-w-">2.    a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }</h4>
+<h2 id="1dfa1-image"><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a1dfa1.png" alt="1dfa1 image"></h2><h4 id="2-a1dfa2jff---w--neither-00-nor-000-is-a-substring-of-w-">2.    a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }</h4>
 <pre><code>(Q,Σ,delta,start,final)
 
-Q = { q0, q1, q2 }
+Q = { q0, q1, q2, q3 }
 Σ = {0, 1}
 Delta
 start = { q0 }
@@ -124,8 +123,13 @@ accept = { q0, q1 }
 </tr>
 <tr>
 <td>q2</td>
+<td>q3</td>
 <td>q2</td>
-<td>q2</td>
+</tr>
+<tr>
+<td>q3</td>
+<td>q3</td>
+<td>q3</td>
 </tr>
 </tbody>
 </table>
@@ -138,7 +142,7 @@ Q = { q0, q1, q2, q3 }
 Σ = {0, 1}
 Delta
 start = { q0 }
-accept = { q0, q1}
+accept = { q0, q1, q3 }
 </code></pre>
 <h6 id="delta-2">Delta</h6>
 <table>
@@ -181,7 +185,7 @@ Q = { q0, q1, q2, q3 }
 Σ = {0, 1}
 Delta
 start = { q0 }
-accept = { q0, q1, q3, q4}
+accept = { q0, q1, q3 }
 </code></pre>
 <h6 id="delta-3">Delta</h6>
 <table>
@@ -220,8 +224,8 @@ accept = { q0, q1, q3, q4}
 <h4 id="5-a1dfa5jff---w--neither-000-nor-001-is-a-substring-of-w-">5. a1dfa5.jff = { w | neither 000 nor 001 is a substring of w }</h4>
 <pre><code>(Q,Σ,delta,start,final)
 
-Q = { q0, q1, q2, q3 }
-Σ = {0, 1}a1dfa1, a1dfa2, a1dfa4
+Q = { q0, q1, q2, q3, q4 }
+Σ = {0, 1}
 Delta
 start = { q0 }
 accept = { q0, q1, q2}
@@ -248,13 +252,18 @@ accept = { q0, q1, q2}
 </tr>
 <tr>
 <td>q2</td>
-<td>q2</td>
-<td>q2</td>
+<td>q3</td>
+<td>q4</td>
 </tr>
 <tr>
 <td>q3</td>
 <td>q3</td>
 <td>q3</td>
+</tr>
+<tr>
+<td>q4</td>
+<td>q4</td>
+<td>q4</td>
 </tr>
 </tbody>
 </table>
@@ -263,7 +272,7 @@ accept = { q0, q1, q2}
 <blockquote>
 <h4 id="use-online-text-to-indicate-the-groupings-as-equivalence-sets">Use Online Text to indicate the groupings as equivalence sets</h4>
 </blockquote>
-<p>{a1dfa1.jff, a1dfa2.jff, a1dfa4.jff} {a1dfa4} {a1dfa5}</p>
+<p>{a1dfa1.jff, a1dfa2.jff, a1dfa4.jff} {a1dfa3.jjf} {a1dfa5.jff}</p>
 <blockquote>
 <h4 id="reflect-on-the-experience-of-constructing-these-dfas-use-online-text-to-report-observations-related-to-your-learning">Reflect on the experience of constructing these DFAs. Use Online Text to report observations related to your learning.</h4>
 </blockquote>
@@ -317,12 +326,22 @@ accept = { q0, q1, q2}
 <tr>
 <td>q1</td>
 <td>q0</td>
-<td>T</td>
+<td>q3</td>
 </tr>
 <tr>
 <td>q2</td>
 <td>q1</td>
-<td>T</td>
+<td>q3</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>q1</td>
+<td>q3</td>
+</tr>
+<tr>
+<td>q3</td>
+<td>q3</td>
+<td>q3</td>
 </tr>
 </tbody>
 </table>
@@ -333,7 +352,7 @@ accept = { q0, q1, q2}
 <p>I am still working on getting the handle of using the tables and  transitions functions methodology for solving them. I understand what needs to happen and how to do so but not some of the methods for doing so seem more confusing that just doing it. I used tables just to kind of organize my thoughts but it seemed more complex to perform delta transition functions across the board d when it was relatively clear from looking at it how to do it. Something I need more practice with.</p>
 <hr>
 <h2 id="a3">A3</h2>
-<h4 id="finite-automata-are-useful-components-of-computers-and-algorithms-t---hus-it-is-important-to-be-able-to-minimize-the-number-of-states-of-a-given-dfa-convert-the-following-dfa-to-a-minimum-state-equivalent-dfa">Finite automata are useful components of computers and algorithms, t---hus it is important to be able to minimize the number of states of a given DFA. Convert the following DFA to a minimum-state equivalent DFA.</h4>
+<h4 id="finite-automata-are-useful-components-of-computers-and-algorithms-thus-it-is-important-to-be-able-to-minimize-the-number-of-states-of-a-given-dfa-convert-the-following-dfa-to-a-minimum-state-equivalent-dfa">Finite automata are useful components of computers and algorithms, thus it is important to be able to minimize the number of states of a given DFA. Convert the following DFA to a minimum-state equivalent DFA.</h4>
 <h5 id="original">Original</h5>
 <p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/dfa2minimize.png" alt="dfa2minimize image"></p>
 <h5 id="minimized">Minimized</h5>
