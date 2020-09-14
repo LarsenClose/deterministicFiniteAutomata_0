@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Assignment A Regular Languages 1</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="assignment-a-regular-languages-1">Assignment A Regular Languages 1</h1>
+<h2 id="larsen-close">Larsen Close</h2>
+<h3 id="cs-3240---section-001">CS 3240 - Section 001</h3>
+<h3 id="professor-dr-jody-paul">Professor:  Dr Jody Paul</h3>
+<blockquote>
+<p>These items are primarily to enable and encourage you to work directly with representations of regular languages in preparation for future work and upcoming exams. Use of JFLAP allows you to check the correctness of your work, enables exploration of operational behaviors of the formalism, and provides a consistent means for sharing and assessment.</p>
+</blockquote>
+<blockquote>
+<p>The intended and recommended approach is as follows:
+Attempt each of the primary activities without reference to others' solutions or use of an automated computational tool (such as JFLAP).
+Develop a solution and a set of data that helps validate the solution.
+After you have deemed a solution satisfactory, implement that solution in JFLAP and use JFLAP's features to analyze and test your work.
+Clean up or annotate your solution as necessary for submission.
+This approach best prepares you for success on exams and putting this knowledge into practice.</p>
+</blockquote>
+<h3 id="a1-design-a-dfa-for-each-of-the-following-languages-under-the-alphabet-σ--0-1">A1. Design a DFA for each of the following languages under the alphabet Σ = {0, 1}.</h3>
+<ol>
+<li>a1dfa1.jff = { w | 00 is not a substring of w }</li>
+<li>a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }</li>
+<li>a1dfa3.jff = { w | neither 00 nor 010 is a substring of w }</li>
+<li>a1dfa4.jff = { w | neither 00 nor 0100 is a substring of w }</li>
+<li>a1dfa5.jff = { w | neither 000 nor 001 is a substring of w }</li>
+</ol>
+<blockquote>
+<p>Implement each in JFLAP and upload the five corresponding JFLAP files using the specified filenames (a1dfa1.jff, a1dfa2.jff, etc.).</p>
+</blockquote>
+<blockquote>
+<p>Consider whether any of these languages are equivalent and separate these languages into groups (sets) that accept the same language.</p>
+</blockquote>
+<blockquote>
+<p>Use Online Text to indicate the groupings as equivalence sets; for example:
+{11a.jff, 11c.jff} {11b.jff} {11d.jff, 11e.jff}</p>
+</blockquote>
+<h4 id="1-a1dfa1jff---w--00-is-not-a-substring-of-w-">1. a1dfa1.jff = { w | 00 is not a substring of w }</h4>
+<pre><code>(Q,Σ,delta,start,final)
+
+Q = { q0, q1, q2 }
+Σ = {0, 1}
+Delta
+start = { q0 }
+accept = { q0, q1 }
+</code></pre>
+<h6 id="delta">Delta</h6>
+<table>
+<thead>
+<tr>
+<th>Present State</th>
+<th>Next state for input 0</th>
+<th>Next state for input 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→q0</td>
+<td>q1</td>
+<td>q0</td>
+</tr>
+<tr>
+<td>q1</td>
+<td>q2</td>
+<td>q1</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>q2</td>
+<td>q2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1dfa1-image"><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a1dfa1.png" alt="1dfa1 image"></h2>
+<h4 id="2-a1dfa2jff---w--neither-00-nor-000-is-a-substring-of-w-">2.    a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }</h4>
+<pre><code>(Q,Σ,delta,start,final)
+
+Q = { q0, q1, q2 }
+Σ = {0, 1}
+Delta
+start = { q0 }
+accept = { q0, q1 }
+</code></pre>
+<h6 id="delta-1">Delta</h6>
+<table>
+<thead>
+<tr>
+<th>Present State</th>
+<th>Next state for input 0</th>
+<th>Next state for input 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→q0</td>
+<td>q1</td>
+<td>q0</td>
+</tr>
+<tr>
+<td>q1</td>
+<td>q2</td>
+<td>q1</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>q2</td>
+<td>q2</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a1dfa2.png" alt="a1dfa2 image"></p>
+<hr>
+<h4 id="3-a1dfa3jff---w--neither-00-nor-010-is-a-substring-of-w-">3.    a1dfa3.jff = { w | neither 00 nor 010 is a substring of w }</h4>
+<pre><code>(Q,Σ,delta,start,final)
+
+Q = { q0, q1, q2, q3 }
+Σ = {0, 1}
+Delta
+start = { q0 }
+accept = { q0, q1}
+</code></pre>
+<h6 id="delta-2">Delta</h6>
+<table>
+<thead>
+<tr>
+<th>Present State</th>
+<th>Next state for input 0</th>
+<th>Next state for input 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→q0</td>
+<td>q1</td>
+<td>q0</td>
+</tr>
+<tr>
+<td>q1</td>
+<td>q2</td>
+<td>q3</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>q2</td>
+<td>q2</td>
+</tr>
+<tr>
+<td>q3</td>
+<td>q2</td>
+<td>q0</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a1dfa3.png" alt="a1dfa3 image"></p>
+<hr>
+<h4 id="4-a1dfa4jff---w--neither-00-nor-0100-is-a-substring-of-w-">4.  a1dfa4.jff = { w | neither 00 nor 0100 is a substring of w }</h4>
+<pre><code>(Q,Σ,delta,start,final)
+
+Q = { q0, q1, q2, q3 }
+Σ = {0, 1}
+Delta
+start = { q0 }
+accept = { q0, q1, q3, q4}
+</code></pre>
+<h6 id="delta-3">Delta</h6>
+<table>
+<thead>
+<tr>
+<th>Present State</th>
+<th>Next state for input 0</th>
+<th>Next state for input 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→q0</td>
+<td>q1</td>
+<td>q0</td>
+</tr>
+<tr>
+<td>q1</td>
+<td>q2</td>
+<td>q3</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>q2</td>
+<td>q2</td>
+</tr>
+<tr>
+<td>q3</td>
+<td>q1</td>
+<td>q0</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a1dfa4.png" alt="a1dfa4 image"></p>
+<hr>
+<h4 id="5-a1dfa5jff---w--neither-000-nor-001-is-a-substring-of-w-">5. a1dfa5.jff = { w | neither 000 nor 001 is a substring of w }</h4>
+<pre><code>(Q,Σ,delta,start,final)
+
+Q = { q0, q1, q2, q3 }
+Σ = {0, 1}a1dfa1, a1dfa2, a1dfa4
+Delta
+start = { q0 }
+accept = { q0, q1, q2}
+</code></pre>
+<h6 id="delta-4">Delta</h6>
+<table>
+<thead>
+<tr>
+<th>Present State</th>
+<th>Next state for input 0</th>
+<th>Next state for input 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→q0</td>
+<td>q1</td>
+<td>q0</td>
+</tr>
+<tr>
+<td>q1</td>
+<td>q2</td>
+<td>q0</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>q2</td>
+<td>q2</td>
+</tr>
+<tr>
+<td>q3</td>
+<td>q3</td>
+<td>q3</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a1dfa5.png" alt="a1dfa5 image"></p>
+<hr>
+<blockquote>
+<h4 id="use-online-text-to-indicate-the-groupings-as-equivalence-sets">Use Online Text to indicate the groupings as equivalence sets</h4>
+</blockquote>
+<p>{a1dfa1.jff, a1dfa2.jff, a1dfa4.jff} {a1dfa4} {a1dfa5}</p>
+<blockquote>
+<h4 id="reflect-on-the-experience-of-constructing-these-dfas-use-online-text-to-report-observations-related-to-your-learning">Reflect on the experience of constructing these DFAs. Use Online Text to report observations related to your learning.</h4>
+</blockquote>
+<p>The assignment started off pretty smoothly then in talking with classmates there was a lot of disagreement and misunderstanding about whether we needed to take the complement of the strings not contained. It didn't really make sense to me that we could recognize it by negation unless it was by rejecting that and accepting everything else possible but with the confusion I wanted to check. Process wise I used this markdown format to keep notes and drew on a paper pad at first to brainstorm and then implemented within jflap to check on it. They're cool to work with, after you start doing it for a while you start to think totally differently.</p>
+<hr>
+<h2 id="a2-convert-the-following-nfa-into-a-dfa">A2. Convert the following NFA into a DFA.</h2>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/assign1dfa2.png" alt="assign1dfa2 image"></p>
+<blockquote>
+<h5 id="implement-the-dfa-using-jflap-and-upload-the-dfa-as-a-file-named-a2dfajff">Implement the DFA using JFLAP and upload the DFA as a file named a2dfa.jff</h5>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→S</td>
+<td>{ q1, T}</td>
+<td>q2</td>
+</tr>
+<tr>
+<td>q1</td>
+<td>{S, T}</td>
+<td>T</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→q0</td>
+<td>q1</td>
+<td>q2</td>
+</tr>
+<tr>
+<td>q1</td>
+<td>q0</td>
+<td>T</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>q1</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a2dfa.png" alt="a2dfa image"></p>
+<blockquote>
+<h5 id="reflect-use-online-text-to-report-observations-related-to-your-learning">Reflect.  Use Online Text to report observations related to your learning.</h5>
+</blockquote>
+<p>I am still working on getting the handle of using the tables and  transitions functions methodology for solving them. I understand what needs to happen and how to do so but not some of the methods for doing so seem more confusing that just doing it. I used tables just to kind of organize my thoughts but it seemed more complex to perform delta transition functions across the board d when it was relatively clear from looking at it how to do it. Something I need more practice with.</p>
+<hr>
+<h2 id="a3">A3</h2>
+<h4 id="finite-automata-are-useful-components-of-computers-and-algorithms-t---hus-it-is-important-to-be-able-to-minimize-the-number-of-states-of-a-given-dfa-convert-the-following-dfa-to-a-minimum-state-equivalent-dfa">Finite automata are useful components of computers and algorithms, t---hus it is important to be able to minimize the number of states of a given DFA. Convert the following DFA to a minimum-state equivalent DFA.</h4>
+<h5 id="original">Original</h5>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/dfa2minimize.png" alt="dfa2minimize image"></p>
+<h5 id="minimized">Minimized</h5>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a3mindfa.png" alt="a3mindfa image"></p>
+<blockquote>
+<h5 id="reflect-use-online-text-to-report-observations-related-to-your-learning-1">Reflect.  Use Online Text to report observations related to your learning.</h5>
+</blockquote>
+<p>I immediately got an example of a case where it was a bit much for me to get my head around how to minimize this without using a specific method breaking into step by step or with tools to help. In looking at this one I thought that it would have an easier time writing it in minimal from based of the</p>
+<hr>
+<h3 id="a4">A4.</h3>
+<h4 id="consider-the-following-regular-grammar-with-start-symbol-s-and-terminals-x-y">Consider the following regular grammar with start symbol S and terminals {x, y}.</h4>
+<pre><code>S → xS
+S → yX
+S → yY
+X → xX
+X → yS
+Y → xY
+Y → λ
+</code></pre>
+<h5 id="a4a-list-four-strings-each-of-length-less-than-4-accepted-by-this-grammar-include-ε-if-it-is-accepted">A4a. List four strings, each of length less than 4, accepted by this grammar. (Include ε if it is accepted.)</h5>
+<ol>
+<li>S → yY → y                 (Y → λ)         'y'</li>
+<li>S → yY → yxY → yx          (Y → λ)         'yx'</li>
+<li>S → xS → xyY → xy          (Y → λ)         'xy'</li>
+<li>S → yY → yxY → yxxY → yxx  (Y → λ)         'yxx'</li>
+</ol>
+<h5 id="a4b-list-four-strings-each-of-length-less-than-4-not-accepted-by-this-grammar-include-ε-if-it-is-not-accepted">A4b. List four strings, each of length less than 4, not accepted by this grammar. (Include ε if it is not accepted.)</h5>
+<ol>
+<li>'ε'</li>
+<li>'x'</li>
+<li>'yy'</li>
+<li>'xx'</li>
+</ol>
+<h5 id="a4c-in-english-describe-the-language-represented-by-this-grammar">A4c. In English, describe the language represented by this grammar.</h5>
+<p>The language this represented by this grammar is made up of x's and y's, it does not contain the empty string, the only case within which it can have one letter is if that letter is y, all strings of greater than length one must contain at least one x and one y in either order.</p>
+<hr>
+<h3 id="a5-define-a-right-linear-grammar-that-generates">A5. Define a right-linear grammar that generates:</h3>
+<blockquote>
+<p>The language under the alphabet Σ = {0, 1} comprised of strings in which every 0 must have a 1 adjacent to it on both sides. Examples of strings that are accepted include 101, 1101, 1010101, and 1011101. Examples of rejected strings include 010, 0101, and 1001.</p>
+</blockquote>
+<h5 id="g--s-a-b-0-1-p-s">G = ({S, A, B}, {0, 1}, P, S)</h5>
+<pre><code>p = {
+  S → 1A | λ
+  A → 0C | 1B | λ
+  B → 1 | 1B | λ   
+  C → 1B
+}
+
+S → 1A
+S → λ
+B → λ
+B → 0C
+A → 0C
+B → 1B
+A → 1B
+C → 1B
+</code></pre>
+<blockquote>
+<h5 id="implement-that-grammar-in-jflap-and-upload-the-implementation-as-a-file-named-a5rgjff">Implement that grammar in JFLAP and upload the implementation as a file named a5rg.jff</h5>
+</blockquote>
+<p><img src="https://gouda.msudenver.edu/moodle/draftfile.php/11711/user/draft/370327846/a5rg.png" alt="a5rg image"></p>
+<blockquote>
+<h5 id="reflect-use-online-text-to-report-observations-related-to-your-learning-2">Reflect.  Use Online Text to report observations related to your learning.</h5>
+</blockquote>
+<p>We've been doing some of this in Principles of Programming languages which I am taking concurrently so I have relatively more experience here. I had no idea though how fast and powerful of method jflap was for creating/learning/experimenting with grammars. Well really across the board. I got it set up during the summer and messed with it a little bit but had no idea how helpful it and powerful for helping to develop an intuition of being able to think more in the way of a FA.</p>
+
+    </body>
+    </html>

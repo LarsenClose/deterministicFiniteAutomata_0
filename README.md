@@ -1,28 +1,29 @@
 # Assignment A Regular Languages 1
+
 ## Larsen Close
+
 ### CS 3240 - Section 001
-### Professor:  Dr Jody Paul.
+
+### Professor:  Dr Jody Paul
 
 >These items are primarily to enable and encourage you to work directly with representations of regular languages in preparation for future work and upcoming exams. Use of JFLAP allows you to check the correctness of your work, enables exploration of operational behaviors of the formalism, and provides a consistent means for sharing and assessment.
 
 >The intended and recommended approach is as follows:
-
     Attempt each of the primary activities without reference to others' solutions or use of an automated computational tool (such as JFLAP).
     Develop a solution and a set of data that helps validate the solution.
     After you have deemed a solution satisfactory, implement that solution in JFLAP and use JFLAP's features to analyze and test your work.
     Clean up or annotate your solution as necessary for submission.
-
 >This approach best prepares you for success on exams and putting this knowledge into practice.
 
 
 
 ### A1. Design a DFA for each of the following languages under the alphabet Σ = {0, 1}.
 
-1.    a1dfa1.jff = { w | 00 is not a substring of w }
-2.    a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }
-3.    a1dfa3.jff = { w | neither 00 nor 010 is a substring of w }
-4.    a1dfa4.jff = { w | neither 00 nor 0100 is a substring of w }
-5.    a1dfa5.jff = { w | neither 000 nor 001 is a substring of w }
+1.  a1dfa1.jff = { w | 00 is not a substring of w }
+2.  a1dfa2.jff = { w | neither 00 nor 000 is a substring of w }
+3.  a1dfa3.jff = { w | neither 00 nor 010 is a substring of w }
+4.  a1dfa4.jff = { w | neither 00 nor 0100 is a substring of w }
+5.  a1dfa5.jff = { w | neither 000 nor 001 is a substring of w }
 
 >Implement each in JFLAP and upload the five corresponding JFLAP files using the specified filenames (a1dfa1.jff, a1dfa2.jff, etc.).
 
@@ -44,11 +45,11 @@
     start = { q0 }
     accept = { q0, q1 }
 ###### Delta
-|   Present State| Next state for input 0   | Next state for input 1 |
-|---|---|---|
-|→q0| q1| q0|   
-|q1| q2| q1|   
-|q2| q2| q2|
+| Present State | Next state for input 0 | Next state for input 1 |
+| ------------- | ---------------------- | ---------------------- |
+| →q0           | q1                     | q0                     |
+| q1            | q2                     | q1                     |
+| q2            | q2                     | q2                     |
 
 ![1dfa1 image](./images/a1dfa1.png)
 ---
@@ -64,11 +65,11 @@
 
 
 ###### Delta
-|Present State   | Next state for input 0   | Next state for input 1 |
-|---|---|---|
-|→q0| q1| q0|   
-|q1| q2| q1|   
-|q2| q2| q2|
+| Present State | Next state for input 0 | Next state for input 1 |
+| ------------- | ---------------------- | ---------------------- |
+| →q0           | q1                     | q0                     |
+| q1            | q2                     | q1                     |
+| q2            | q2                     | q2                     |
 
 
 
@@ -87,12 +88,12 @@
     accept = { q0, q1}
 
 ###### Delta
-|Present State   | Next state for input 0   | Next state for input 1 |
-|---|---|---|
-|→q0| q1| q0|   
-|q1| q2| q3|   
-|q2| q2| q2|   
-|q3| q2| q0|
+| Present State | Next state for input 0 | Next state for input 1 |
+| ------------- | ---------------------- | ---------------------- |
+| →q0           | q1                     | q0                     |
+| q1            | q2                     | q3                     |
+| q2            | q2                     | q2                     |
+| q3            | q2                     | q0                     |
 
 ![a1dfa3 image](./images/a1dfa3.png)
 
@@ -109,12 +110,12 @@
 
 
 ###### Delta
-|Present State   | Next state for input 0   | Next state for input 1 |
-|---|---|---|
-|→q0| q1| q0|   
-|q1| q2| q3|   
-|q2| q2| q2|   
-|q3| q1| q0|
+| Present State | Next state for input 0 | Next state for input 1 |
+| ------------- | ---------------------- | ---------------------- |
+| →q0           | q1                     | q0                     |
+| q1            | q2                     | q3                     |
+| q2            | q2                     | q2                     |
+| q3            | q1                     | q0                     |
 
 ![a1dfa4 image](./images/a1dfa4.png)
 
@@ -131,12 +132,12 @@
 
 ###### Delta
 
-|   Present State| Next state for input 0   | Next state for input 1 |
-|---|---|---|
-| →q0 | q1 | q0 |   
-|  q1 | q2 | q0 |   
-|  q2 | q2 | q2 |   
-|  q3 | q3 | q3 |
+| Present State | Next state for input 0 | Next state for input 1 |
+| ------------- | ---------------------- | ---------------------- |
+| →q0           | q1                     | q0                     |
+| q1            | q2                     | q0                     |
+| q2            | q2                     | q2                     |
+| q3            | q3                     | q3                     |
 
 ![a1dfa5 image](./images/a1dfa5.png)
 
@@ -157,17 +158,17 @@ The assignment started off pretty smoothly then in talking with classmates there
 ![assign1dfa2 image](./images/assign1dfa2.png)
 > ##### Implement the DFA using JFLAP and upload the DFA as a file named a2dfa.jff
 
-| State   | 0 | 1  |
-|---|---|---|
-| →S | { q1, T} | q2 |   
-| q1 | {S, T} | T |   
-| q2 | T | T |    
+| State | 0        | 1   |
+| ----- | -------- | --- |
+| →S    | { q1, T} | q2  |
+| q1    | {S, T}   | T   |
+| q2    | T        | T   |
 
-| State   | 0 | 1  |
-|---|---|---|
-| →q0 | q1 | q2 |   
-| q1 | q0| T |   
-| q2 | q1 | T |    
+| State | 0   | 1   |
+| ----- | --- | --- |
+| →q0   | q1  | q2  |
+| q1    | q0  | T   |
+| q2    | q1  | T   |
 
 
 ![a2dfa image](./images/a2dfa.png)

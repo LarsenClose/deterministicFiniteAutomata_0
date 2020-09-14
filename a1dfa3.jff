@@ -29,6 +29,11 @@
 			<read>0</read>
 		</transition>
 		<transition>
+			<from>1</from>
+			<to>3</to>
+			<read>1</read>
+		</transition>
+		<transition>
 			<from>0</from>
 			<to>0</to>
 			<read>1</read>
@@ -37,6 +42,11 @@
 			<from>2</from>
 			<to>2</to>
 			<read>1</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>2</to>
+			<read>0</read>
 		</transition>
 		<transition>
 			<from>1</from>
@@ -51,16 +61,6 @@
 		<transition>
 			<from>0</from>
 			<to>1</to>
-			<read>0</read>
-		</transition>
-		<transition>
-			<from>1</from>
-			<to>3</to>
-			<read>1</read>
-		</transition>
-		<transition>
-			<from>3</from>
-			<to>2</to>
 			<read>0</read>
 		</transition>
 	</automaton>
